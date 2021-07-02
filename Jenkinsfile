@@ -3,6 +3,8 @@
 
 import hudson.model.Result
 import io.werx.banzai.LogLevel
+import io.werx.banzai.BanzaiStage
+import io.werx.banzai.BanzaiStages
 
 import static hudson.model.Result.ABORTED
 import static hudson.model.Result.FAILURE
@@ -48,48 +50,35 @@ ansiColor('xterm') {
         echo "${currentBuild.result}"
 
         // Banzai uses hudson.model.Result
-        result.to UNSTABLE, "because"
-
-/*
-                // Tasks from array:
-                def stringsToEcho = ["a", "b", "c", "d"]
-
-                def stages = stringsToEcho.collectEntries {
-                    ["echoing ${it}": transformIntoStep(it)]
-                }
-
-                script.parallel stages
+        //result.to UNSTABLE, "because"
 
                 // banzai tasks
                 def banzaiStages = new BanzaiStages()
 
                 banzaiStages.add("1st", {
-                    script.log INFO, "first"
-                    // script.result UNSTABLE
+                    log INFO, "first"
+                    // result UNSTABLE
                 })
 
                 banzaiStages.add("2nd", {
-                    script.log INFO, "second"
-                    // script.result FAILURE
+                    log INFO, "second"
+                    // result FAILURE
                 })
 
                 banzaiStages.add("3rd", {
-                    script.log INFO, "third"
-                    // script.result NOT_BUILT, "just because."
+                    log INFO, "third"
+                    // result NOT_BUILT, "just because."
                 })
 
-                script.parallel banzaiStages.tasks
+                parallel banzaiStages.tasks
 
+        /*
                 // BanzaiStage
-                script.banzai.addStage "Stage 1", { script.log INFO, "First" }
-                script.banzai.addStage "Stage 2", { aStage() }
-                script.banzai.addStage "Stage 3.", third
+                script.banzai.addStage "Stage 1", { log INFO, "First" }
+                //script.banzai.addStage "Stage 2", { aStage() }
+                //script.banzai.addStage "Stage 3.", third
 
                 script.banzai.execStages()
-
-                // If this far, then success.
-                script.result.set(SUCCESS)
-*/
-
+        */
     }
 }
