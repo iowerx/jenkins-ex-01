@@ -3,8 +3,8 @@
 
 import hudson.model.Result
 import io.werx.banzai.LogLevel
-import io.werx.banzai.BanzaiStage
-import io.werx.banzai.BanzaiStages
+import io.werx.banzai.BzStage
+import io.werx.banzai.Bztages
 
 import static hudson.model.Result.ABORTED
 import static hudson.model.Result.FAILURE
