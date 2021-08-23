@@ -1,5 +1,5 @@
 #!/usr/bin/env groovy
-@Library('Banzai@master')_
+@Library('Banzai@main')_
 
 import hudson.model.Result
 import io.werx.banzai.LogLevel
